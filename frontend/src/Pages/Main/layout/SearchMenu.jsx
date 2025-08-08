@@ -1,7 +1,7 @@
 import { BiSearch } from "react-icons/bi";
 import SharedNavLinks from "../shared/SharedNavLinks";
 
-const SearchMenu = ({ searchQuery, onSearchInputChange}) => (
+const SearchMenu = ({ searchQuery, onSearchInputChange }) => (
   <div className="hidden xl:flex items-center ml-8 flex-1">
     <form className="relative flex-1 max-w-6xl">
       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
