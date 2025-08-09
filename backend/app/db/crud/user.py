@@ -5,6 +5,7 @@ from app.db.schemas.users import UserCreate, UserUpdate
 
 
 class UserCrud:
+    # 값이 없을 수도 있음
     @staticmethod
     async def get_by_id(db: AsyncSession, user_id: int) -> User | None:
         result = await db.execute(select(User).filter(User.user_id == user_id))
@@ -17,6 +18,7 @@ class UserCrud:
         await db.flush()
         return db_user
 
+    # user_id 값이 pk 라서 값이 없을 수 없으며 get_by_id 함수와 다르게 db.get() 사용
     @staticmethod
     async def update_by_id(
         db: AsyncSession, user_id: int, user: UserUpdate
